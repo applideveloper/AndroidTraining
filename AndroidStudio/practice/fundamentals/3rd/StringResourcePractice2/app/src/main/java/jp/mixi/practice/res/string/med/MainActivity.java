@@ -46,15 +46,17 @@ public class MainActivity extends Activity implements TextWatcher {
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         TextView countView = (TextView) findViewById(R.id.TextCounter);
         // TODO: フォーマット用の String リソース（text_counter）を取り出し、setText(CharSequence) の引数に渡す
-        countView.setText(null);
+        String formatted = getString(R.string.text_counter, 1, 2);
+        countView.setText(formatted);
     }
 
-    // Show Toast ボタンが押された
+    // Show Toast ボタンが押
     public void onConfirmClick(View v) {
         EditText nameInput = (EditText) findViewById(R.id.NameInput);
         String name = nameInput.getText().toString();
         mClickCount++;
         // TODO: フォーマット用の String リソース（toast_message）を取り出し、makeText(Context, CharSequence, int) の第 2 引数に渡す
-        Toast.makeText(this, "", Toast.LENGTH_LONG).show();
+        String formatted = getString(R.string.toast_message, name, mClickCount);
+        Toast.makeText(this, formatted, Toast.LENGTH_LONG).show();
     }
 }
