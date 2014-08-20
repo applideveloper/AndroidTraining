@@ -1,6 +1,7 @@
 
 package jp.mixi.practice.res.string.beg;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -75,6 +76,17 @@ public class MainActivity extends Activity {
         TextView text7 = new TextView(this);
         text7.setText(quantity1);
 
+//	    int count =  "zero";
+	    Resources res = getResources();
+	    String my_egg_en = res.getQuantityString(R.plurals.my_eggs_en, 2, 10);
+	    TextView text8 = new TextView(this);
+	    text8.setText(my_egg_en);
+
+		Resources res2 = getResources();
+	    String my_eggs_ja = res2.getQuantityString(R.plurals.my_eggs_ja, 2, 15);
+	    TextView text9 = new TextView(this);
+	    text9.setText(my_eggs_ja);
+
         // レイアウトにテキストビューを追加
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
@@ -102,6 +114,8 @@ public class MainActivity extends Activity {
         layout.addView(text6, new LinearLayout.LayoutParams(WC, WC));
 
         layout.addView(text7, new LinearLayout.LayoutParams(WC, WC));
+
+	    layout.addView(text8, new LinearLayout.LayoutParams(WC, WC));
 
         setContentView(layout);
 

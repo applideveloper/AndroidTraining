@@ -32,6 +32,7 @@ public class MainActivity extends Activity {
         CustomListItemAdapter adapter = new CustomListItemAdapter(mActivity, list);
 
         listView.setAdapter(adapter);
+
         // リストアイテムをタップした時の動作を定義する
         listView.setOnItemClickListener(new OnItemClickListener() {
             @Override
