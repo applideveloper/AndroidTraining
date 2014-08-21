@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ScrollViewPractice1</string>
+    <string name="hello_world">Hello world! MyName is Android. This app is written in Java, and running on Dalvik VM,not Sum VM. Nice to see you! Have fun :)</string>
+    <string name="action_settings">Settings</string>
+</resources>

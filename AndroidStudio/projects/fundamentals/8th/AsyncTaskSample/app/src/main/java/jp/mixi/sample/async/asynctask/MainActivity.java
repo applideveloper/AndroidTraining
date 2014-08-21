@@ -2,13 +2,18 @@
 package jp.mixi.sample.async.asynctask;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+	@SuppressWarnings("unused")
+	public static final String TAG = MainActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +39,7 @@ public class MainActivity extends Activity {
      * @author keishin.yokomaku
      */
     private class MyAsyncTask extends AsyncTask<Void, Void, Void> {
+
         /**
          * 非同期処理を実行する前に UI スレッドで実行する処理を書く
          */
@@ -59,6 +65,11 @@ public class MainActivity extends Activity {
         @Override
         protected Void doInBackground(Void... params) {
             try {
+	            Thread.sleep(5000L);
+	            Log.d("TAG", "doInBackground");
+//                Toast.makeText(MainActivity.this, "doInBackground", Toast.LENGTH_SHORT).show();
+//	            TextView text = (TextView)findViewById(R.id.hello);
+//                text.setText("非同期処理実行");
                 publishProgress();
                 Thread.sleep(2000L);
                 publishProgress();
@@ -70,6 +81,7 @@ public class MainActivity extends Activity {
                 publishProgress();
                 Thread.sleep(2000L);
                 publishProgress();
+
             } catch (InterruptedException e) {
                 Log.e(MyAsyncTask.class.getSimpleName(), "thread interrupted: ", e);
             }

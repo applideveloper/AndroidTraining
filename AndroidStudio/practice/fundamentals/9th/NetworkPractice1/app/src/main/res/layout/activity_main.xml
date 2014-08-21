@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="url"
-            android:text="http://mixi.jp" />
+            android:text="http://172.17.89.166:3000/" />
 
         <EditText
             android:id="@+id/httpBody"
@@ -39,7 +39,7 @@
             android:text="post" />
 
         <TextView
-            android:id="@+id/responce"
+            android:id="@+id/response"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
