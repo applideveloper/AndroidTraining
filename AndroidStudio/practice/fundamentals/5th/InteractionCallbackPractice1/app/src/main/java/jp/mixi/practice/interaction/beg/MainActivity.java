@@ -4,6 +4,8 @@ package jp.mixi.practice.interaction.beg;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -20,4 +22,19 @@ public class MainActivity extends Activity {
         return true;
     }
 
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.action_settings:
+				Toast.makeText(this, "press Settings", Toast.LENGTH_SHORT).show();
+				return true;
+			case R.id.action_login:
+				Toast.makeText(this, "press Login", Toast.LENGTH_SHORT).show();
+				return true;
+			case R.id.action_refresh:
+				Toast.makeText(this, "press Refresh", Toast.LENGTH_SHORT).show();
+				return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 }

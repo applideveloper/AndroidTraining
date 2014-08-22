@@ -1,0 +1,3 @@
+ActionBarSherlockの方は、OptionsMenuが白いのに対して、
+Theme.Lightの方は黒い
+

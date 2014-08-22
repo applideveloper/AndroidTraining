@@ -14,4 +14,18 @@
         android:layout_height="wrap_content"
         android:text="@string/insert" />
 
+    <Button
+        android:id="@+id/Select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/Insert"
+        android:text="select"/>
+
+    <ListView
+        android:id="@+id/ListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Insert">
+    </ListView>
+
 </RelativeLayout>
